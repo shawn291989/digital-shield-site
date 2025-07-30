@@ -1,162 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Digital Shield | Advanced Tracker Blocker & Privacy Guard</title>
-    <meta name="description" content="Take back your privacy with Digital Shield. The ultimate tracker blocker and ad blocker for Chrome. Get an instant privacy score, delete cookies, and browse faster and safer.">
-    <meta name="keywords" content="tracker blocker, ad blocker, privacy extension, secure Browse, delete cookies, stop trackers, privacy guard, data protection, privacy score, chrome extension">
-
+    <title>Digital Shield - All-in-One Privacy & Security Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #212529;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
+        .hero-gradient {
+            background: linear-gradient(120deg, #F0F4FF 0%, #E6E9F4 100%);
         }
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #005fcc;
-            color: white;
+        .dark .hero-gradient {
+            background: linear-gradient(120deg, #1A202C 0%, #2D3748 100%);
         }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #10b981;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.2s;
+        .dark .feature-card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
         }
-        .cta-button:hover {
-            background-color: #0d9469;
+        .faq-item[open] summary .arrow {
+            transform: rotate(180deg);
         }
-        section {
-            padding: 60px 20px;
-            text-align: center;
+        .highlight {
+            font-weight: 600;
+            color: #2563EB;
         }
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: left;
-        }
-        .feature-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        .feature-item h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-        }
-        .pro-section {
-            background-color: #2d3035;
-            color: white;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #6c757d;
+        .dark .highlight {
+            color: #60A5FA;
         }
     </style>
 </head>
-<body>
+<body class="bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300">
 
-    <header class="hero">
-        <h1>Take Back Your Privacy. Block Trackers. Browse Faster.</h1>
-        <p>Digital Shield is the ultimate privacy guard and tracker blocker for Chrome. Stop invasive ads, delete cookies, see website safety scores, and browse a cleaner, more secure internet.</p>
-        <a href="https://chromewebstore.google.com/detail/pkonihncnkmbejhhjadaognganhinnhc?utm_source=item-share-cb" class="cta-button">Add to Chrome for Free</a>
+    <!-- Header -->
+    <header class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="http://googleusercontent.com/file_content/3" alt="Digital Shield Logo" class="w-8 h-8">
+                <h1 class="text-xl font-bold text-gray-900 dark:text-white">Digital Shield</h1>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Features</a>
+                <a href="#dashboard" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Dashboard</a>
+                <a href="#arcade" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Privacy Arcade</a>
+                <a href="#faq" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">FAQ</a>
+            </nav>
+            <a href="https://chrome.google.com/webstore" target="_blank" class="bg-blue-600 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                Add to Chrome for Free
+            </a>
+        </div>
     </header>
 
+    <!-- Hero Section -->
     <main>
-        <section id="features">
-            <div class="container">
-                <h2>Your All-in-One Privacy Toolkit</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <h3>Advanced Tracker Blocker</h3>
-                        <p>Our core feature stops third-party trackers from monitoring your every move. By blocking these data collectors, Digital Shield enhances your online privacy and dramatically speeds up page loading times.</p>
+        <section class="hero-gradient">
+            <div class="container mx-auto px-6 text-center py-20 md:py-32">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">The All-in-One Privacy Suite.</h2>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                    Block trackers, check for breached passwords, get site safety warnings, and clean your browser in one click. Digital Shield is the only tool you need for a faster, cleaner, and safer internet.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                     <a href="https://chrome.google.com/webstore" target="_blank" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-2xl w-full sm:w-auto flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Install for Free
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">A Complete Toolkit for Your Digital Life</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">Every feature is designed to work in harmony, providing seamless, comprehensive protection.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Core Protection -->
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Core Protection</h4>
+                        <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg><span><span class="highlight">Site Risk Analysis:</span> Get an instant Privacy Score (A+ to F).</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><span><span class="highlight">Malicious Site Shield:</span> Block dangerous sites and phishing scams.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg><span><span class="highlight">Advanced Tracker Blocker:</span> Stop analytics and social media trackers.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg><span><span class="highlight">HTTPS Upgrade:</span> Automatically force a secure, encrypted connection.</span></li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <h3>Instant Privacy Score</h3>
-                        <p>Knowledge is power. Get an easy-to-understand A+ to F privacy rating for every website you visit. Instantly assess a site's security and trustworthiness before you interact with it.</p>
+
+                    <!-- Identity Protection -->
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Identity Protection</h4>
+                         <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H5v-2H3v-2H1.75a1.75 1.75 0 01-1.75-1.75V11c0-2.21 1.79-4 4-4h1.25a1.75 1.75 0 011.75 1.75v1.5a.75.75 0 001.5 0v-1.5A1.75 1.75 0 0113.25 7H15z"></path></svg><span><span class="highlight">Password Health Check:</span> Check for weak or breached passwords securely.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.789-2.756 9.348m-2.288-2.288A12.023 12.023 0 014 11c0-6.627 5.373-12 12-12 2.228 0 4.31.61 6.112 1.688m-5.112 5.112a3 3 0 11-4.242 0 3 3 0 014.242 0z"></path></svg><span><span class="highlight">Anti-Fingerprinting:</span> Stay anonymous by scrambling your browser's unique signature.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg><span><span class="highlight">URL Tracking Cleaner:</span> Automatically remove tracking codes from links.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span><span class="highlight">Privacy Sandbox:</span> Confuse trackers by feeding them randomized, fake data.</span></li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <h3>One-Click Cookie Destroyer</h3>
-                        <p>Clear your digital footprint with a single click. Our Cookie Destroyer removes all cookies stored by the current site, a powerful tool for enhancing privacy and stopping persistent tracking.</p>
+
+                    <!-- Data Control -->
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-yellow-600 dark:text-yellow-400">Data Control</h4>
+                         <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg><span><span class="highlight">AI Policy Summarizer:</span> Understand privacy policies and spot dangerous clauses.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" opacity=".2"></path></svg><span><span class="highlight">Data Request Helper:</span> Formally request or delete your stored data from companies.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg><span><span class="highlight">One-Click Browser Cleaner:</span> Easily wipe cookies and cache for better performance.</span></li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <h3>Data Breach Monitoring</h3>
-                        <p>Browse with confidence. Digital Shield checks if the website you're on has a history of data breaches, alerting you to potential risks before you submit any personal information.</p>
+
+                    <!-- Enhanced Browsing -->
+                    <div class="feature-card bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="text-xl font-bold mb-4 text-green-600 dark:text-green-400">Enhanced Browsing</h4>
+                         <ul class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg><span><span class="highlight">Global Dark Mode:</span> Apply a comfortable dark theme to any website.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg><span><span class="highlight">Element Zapper:</span> Instantly remove any unwanted pop-ups or banners.</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3h2m-4 13h2"></path></svg><span><span class="highlight">Privacy News Ticker:</span> Stay informed with the latest security headlines.</span></li>
+                             <li class="flex items-start gap-3"><svg class="w-6 h-6 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><span><span class="highlight">Live Tracker List:</span> Unmask the invisible companies tracking you in real-time.</span></li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <h3>Powerful Privacy Tools</h3>
-                        <p>Take control of your data. Use our AI tool to summarize complex privacy policies, and generate formal GDPR/CCPA requests to access or delete your data from companies.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="py-24 bg-gray-50 dark:bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Your Personal Privacy Dashboard</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">See your protection in action with a real-time overview of your digital footprint, turning abstract threats into clear, actionable insights.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800/50 p-8 sm:p-12 rounded-2xl max-w-5xl mx-auto border border-gray-200 dark:border-gray-700">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                        <div class="p-4">
+                            <p class="text-4xl font-bold text-blue-600 dark:text-blue-400">1.2M+</p>
+                            <p class="text-gray-500 dark:text-gray-400 mt-1 font-medium">Trackers Blocked</p>
+                        </div>
+                         <div class="p-4">
+                            <p class="text-4xl font-bold text-purple-600 dark:text-purple-400">92%</p>
+                            <p class="text-gray-500 dark:text-gray-400 mt-1 font-medium">Footprint Reduction</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-4xl font-bold text-green-600 dark:text-green-400">A+</p>
+                            <p class="text-gray-500 dark:text-gray-400 mt-1 font-medium">Avg. Site Score</p>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-4xl font-bold text-red-600 dark:text-red-400">Google</p>
+                            <p class="text-gray-500 dark:text-gray-400 mt-1 font-medium">Top Tracker</p>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <h3>Privacy News Ticker</h3>
-                        <p>Stay informed on the latest security threats and privacy news. Our built-in news ticker keeps you up-to-date on the evolving digital landscape, right from the extension popup.</p>
+                    <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6">
+                        <img src="http://googleusercontent.com/file_content/2" alt="Dashboard charts showing daily activity and category breakdown of blocked trackers" class="w-full h-auto rounded-lg shadow-md">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pro" class="pro-section">
-            <div class="container">
-                <h2>Unlock Ultimate Protection with Digital Shield PRO</h2>
-                <p style="max-width: 700px; margin: 0 auto 40px;">For users who demand the highest level of security, our PRO version offers revolutionary features.</p>
-                <div class="features-grid">
-                    <div class="feature-item" style="background-color: #374151; color: white;">
-                        <h3>High-Risk Blocking</h3>
-                        <p>This aggressive mode blocks not just ads, but sophisticated trackers used by data brokers and other high-risk entities to protect you from the deepest level of online surveillance.</p>
+        <!-- Privacy Arcade Section -->
+        <section id="arcade" class="py-24 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">The Privacy Arcade: Fun Meets Security</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">Engage with privacy concepts through our unique collection of games, accessible right from the extension.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-lg text-blue-600 dark:text-blue-400">Tracker Run</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">Dodge tracker bots in a fast-paced infinite runner and survive the "Boss" to set a new high score!</p>
                     </div>
-                    <div class="feature-item" style="background-color: #374151; color: white;">
-                        <h3>Privacy Sandbox</h3>
-                        <p>Instead of just blocking trackers, Sandbox Mode feeds them randomized, fake data. This keeps websites from breaking while your real identity remains completely hidden and secure.</p>
+                    <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-lg text-purple-600 dark:text-purple-400">Privacy Wordle</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">Guess a 5-letter privacy-related word (like PROXY or CACHE) in six tries for a fun daily challenge.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-lg text-green-600 dark:text-green-400">Password Panic</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">Generate hilariously weak or complex passwords with a Mad Libs-style game and get a funny security rating.</p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <h4 class="font-bold text-lg text-red-600 dark:text-red-400">Data Trail Tales</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">Create funny stories with privacy-themed prompts, highlighting your digital footprint in a memorable way.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="download">
-            <div class="container">
-                <h2>Ready to Experience a Better Internet?</h2>
-                <p>Stop being tracked, remove annoying ads, and browse with peace of mind. Install Digital Shield today—it's free!</p>
-                <a href="https://chromewebstore.google.com/detail/pkonihncnkmbejhhjadaognganhinnhc?utm_source=item-share-cb" class="cta-button">Add Digital Shield to Chrome Now</a>
+        <!-- Final CTA -->
+        <section class="bg-gray-100 dark:bg-gray-900/50 py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Your Digital Freedom is One Click Away.</h3>
+                 <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4 mb-8">
+                    Stop trading your privacy for convenience. With Digital Shield, you can have both. Install it in 30 seconds and feel the difference forever.
+                </p>
+                <a href="https://chrome.google.com/webstore" target="_blank" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-2xl inline-block transform hover:-translate-y-1">
+                    Add Digital Shield for Free
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 Digital Shield. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2025 Digital Shield. All Rights Reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:text-blue-600 dark:hover:text-blue-400">Contact Us</a>
+            </div>
+        </div>
     </footer>
 
 </body>
