@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Shield Pricing</title>
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-dark: #111827;
+      --text-primary-light: #111827;
+      --text-primary-dark: #f9fafb;
+      --text-secondary-light: #6b7280;
+      --text-secondary-dark: #d1d5db;
+      --accent-blue: #2563eb;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-primary-light);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    html.dark body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary-dark);
+    }
+
+    .pricing-container {
+      max-width: 900px;
+      width: 100%;
+    }
+    .pricing-container img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+    }
+    .pricing-container h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary-light);
+      margin-bottom: 2rem;
+    }
+    html.dark .subtitle { color: var(--text-secondary-dark); }
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .plan {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      flex: 1 1 280px;
+      max-width: 320px;
+      text-align: left;
+    }
+    html.dark .plan {
+      background: #1f2937;
+    }
+    .plan h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0.5rem 0 1rem;
+      color: var(--accent-blue);
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .feature-list svg {
+      color: var(--accent-green);
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+    .button.free { background-color: #e5e7eb; color: #111827; }
+    .button.pro { background-color: var(--accent-purple); color: white; }
+    .button.pro:hover { background-color: #7c3aed; }
+  </style>
+</head>
+<body>
+  <div class="pricing-container">
+    <img src="images/icon128.png" alt="Digital Shield Logo">
+    <h1>Choose Your Digital Shield Plan</h1>
+    <p class="subtitle">Protect your privacy and browsing experience with the plan that fits you best.</p>
+
+    <div class="plans">
+      <!-- Free Plan -->
+      <div class="plan">
+        <h2>Free</h2>
+        <p class="price">$0</p>
+        <ul class="feature-list">
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic tracker blocking</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Cache & cookie cleaner</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Secure notes vault</li>
+        </ul>
+        <a href="#" class="button free">Included in Extension</a>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="plan">
+        <h2>Pro</h2>
+        <p class="price">$5 <span style="font-size:1rem;font-weight:500;">lifetime</span></p>
+        <ul class="feature-list">
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Aggressive tracker blocking</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Privacy Sandbox (fake data shield)</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Work Mood (allow safe analytics only)</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Priority support & updates</li>
+        </ul>
+        <a href="https://mdanwarul.gumroad.com/l/dwbjef" target="_blank" class="button pro">Unlock Pro</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
